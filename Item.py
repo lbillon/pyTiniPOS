@@ -9,10 +9,14 @@ class Item(object):
 
 
     def __init__(self, name, identifier, price):
-        self.__name= name
-        self.__identifier=identifier
-        self.__price=price
-        
+        if len(identifier) != 1 or not identifier.isalpha():
+            raise ValueError('Item identifier length must be a single letter.')
+
+
+        self.__name = str(name)
+        self.__identifier = str(identifier)
+        self.__price = float(price)
+
     def toString(self):
-        return '{}({}):{}'.format(self.__name,self.__identifier,self.__price)
-        
+        return '{}({}):{}'.format(self.__name, self.__identifier, self.__price)
+
