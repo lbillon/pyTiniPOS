@@ -13,10 +13,10 @@ class Item(object):
             raise ValueError('Item identifier length must be a single letter.')
 
 
-        self.__name = str(name)
-        self.__identifier = str(identifier)
-        self.__price = float(price)
+        self.name = str(name)
+        self.identifier = str(identifier)
+        self.price = float(price)
 
     def toString(self):
-        return '{}({}):{}'.format(self.__name, self.__identifier, self.__price)
+        return '{}({}):{:.2f}'.format(self.name, self.identifier, self.price)
 
