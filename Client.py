@@ -13,6 +13,17 @@ if __name__ == '__main__':
 
     __im = ItemManager.ItemManager()
 
+    def printUsage():
+        print(
+"Available commands:\n\
+/+\t\tAdd new item definition\n\
+/s filename\tSave item definitions to file\n\
+/l filename\tLoad item definitions from file\n\
+/h\t\tDisplay this help message\n\
+\n\
+Type a series of identifiers to register an order\n\
+")
+
     def __exitProgram():
         print("terminating...")
         sys.exit()
@@ -37,9 +48,13 @@ if __name__ == '__main__':
 
     def __parseInput(userInput):
         if userInput == "":
-            pass
+            printUsage()
+
         elif userInput == "/+":
             __itemInput();
+
+        elif userInput == "/h":
+            printUsage()
 
         elif userInput == "/i":
             __listItems();
